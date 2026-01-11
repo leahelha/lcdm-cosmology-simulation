@@ -35,8 +35,8 @@ a.out
 
 # Generated outputs
 output/
-
+cmb
 
 # Ignore other files and folders:
 baumann.pdf
-
+data/supernova/supernovadata.txt
