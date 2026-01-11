@@ -36,7 +36,7 @@ void RecombinationHistory::solve_number_density_electrons(){
   const double H0 = Constants.H0_over_h*h;
   const double rho_c0 = (3.0*pow(H0, 2.0))/(8.0*Constants.pi*Constants.G);  
 
-  std::ofstream outFile("Xe_test.txt");
+  std::ofstream outFile("../output/Xe_test.txt");
 
   Utils::StartTiming("Xe");
   
