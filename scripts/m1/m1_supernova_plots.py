@@ -194,7 +194,7 @@ plt.text(0.05, 0.95, f'$\mu$={OmegaM_mean:.3f} \n $\sigma={OmegaM_std:.3f}$', tr
 # plt.title('Posterior pdf of $\Omega_{M0}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.xlabel('$\Omega_{M0}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.legend()
-plt.savefig("..figs/m1//sn_Histogram_of_omegaM_Gaussian.pdf")
+plt.savefig("..figs/m1/sn_Histogram_of_omegaM_Gaussian.pdf")
 
 
 plt.figure()
