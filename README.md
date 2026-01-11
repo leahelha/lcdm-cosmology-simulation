@@ -1,7 +1,7 @@
 # Cosmological Simulation of the Universe's Evolution
 
 ## Overview
-This repository contains a C++ implementation of a simplified ΛCDM cosmology simulation of the Universes evolution with the goal of predicting CMB and matter fluctuations desctribed in their power spectra.
+This repository contains a C++ implementation of a simplified ΛCDM cosmology simulation of the Universes evolution with the goal of predicting CMB and matter fluctuations described by their power spectra.
 The project is divided into four milestones which each center on different physical processes that go on to give our results. 
 
 ### Project structure
