@@ -488,16 +488,6 @@ plt.show()
 
 
 
-"""
-
-# TODO
-
-MAKE PLOTS OF THETAs for all three ks
-
-make plots of the other stuff, compare with Callins
-
-
-"""
 
 """ 
 

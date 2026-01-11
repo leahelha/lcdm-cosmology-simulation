@@ -1,0 +1,30 @@
+# Ignore files and folders:
+baumann.pdf
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+
+# Editor settings
+.vscode/
+.idea/
+
+# pytest
+.pytest_cache/
+
+# build artifacts
+build/
+dist/
+*.egg-info/
+
