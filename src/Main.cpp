@@ -55,14 +55,14 @@ int main(int argc, char **argv){
   
   
   // Output background evolution quantities 
-  // cosmo.output("best_params_cosmology.txt"); // MCMC
+  // cosmo.output("output/best_params_cosmology.txt"); // MCMC
 
   // Output background evolution quantities
-  cosmo.output("cosmology.txt");
+  cosmo.output("output/background/cosmology.txt");
 
   // Do the supernova fits. Uncomment when you are ready to run this 
   // Make sure you read the comments on the top of src/SupernovaFitting.h
-  // mcmc_fit_to_supernova_data("data/supernovadata.txt", "results_supernovafitting.txt"); // MCMC
+  // mcmc_fit_to_supernova_data("data/supernovadata.txt", "output/supernova/results_supernovafitting.txt"); // MCMC
 
   
 
@@ -76,7 +76,7 @@ int main(int argc, char **argv){
   rec.info();
 
   // Output recombination quantities
-  rec.output("recombination.txt");
+  rec.output("output/recombination/recombination.txt");
   
 
   //=========================================================================
@@ -90,13 +90,13 @@ int main(int argc, char **argv){
   
   // Output perturbation quantities
   double kvalue = 0.01 / Constants.Mpc;
-  pert.output(kvalue, "perturbations_k0.01.txt");
+  pert.output(kvalue, "output/perturbations/perturbations_k0.01.txt");
 
   double kvalue2 = 0.1 / Constants.Mpc;
-  pert.output(kvalue2, "perturbations_k0.1.txt");
+  pert.output(kvalue2, "output/perturbations/perturbations_k0.1.txt");
 
   double kvalue3 = 0.001 / Constants.Mpc;
-  pert.output(kvalue3, "perturbations_k0.001.txt");
+  pert.output(kvalue3, "output/perturbations/perturbations_k0.001.txt");
   
   
   
@@ -108,12 +108,12 @@ int main(int argc, char **argv){
 
   PowerSpectrum power(&cosmo, &rec, &pert, A_s, n_s, kpivot_mpc);
   power.solve();
-  power.output_cells("cells.txt");
-  // power.output_cells("cells_SW.txt");
-  // power.output_cells("cells_ISW.txt");
-  // power.output_cells("cells_Doppler.txt");
-  // power.output_cells("cells_Polarization.txt");
-  power.output_transfer("matter_transfer.txt");
+  power.output_cells("output/power_spectrum/cells.txt");
+  // power.output_cells("output/power_spectrum/cells_SW.txt");
+  // power.output_cells("output/power_spectrum/cells_ISW.txt");
+  // power.output_cells("output/power_spectrum/cells_Doppler.txt");
+  // power.output_cells("output/power_spectrum/cells_Polarization.txt");
+  power.output_transfer("output/power_spectrum/matter_transfer.txt");
 
   Utils::EndTiming("Everything");
 }

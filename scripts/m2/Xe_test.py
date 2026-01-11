@@ -4,7 +4,7 @@ import matplotlib.patches as patches
 from astropy import constants as const
 
 
-file = np.loadtxt("./Xe_test.txt")
+file = np.loadtxt("../output/recombination/Xe_test.txt")
 
 
 Xe = file[:, 0]

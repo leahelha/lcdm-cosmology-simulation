@@ -9,7 +9,7 @@ Gpc = 3.24*10**(-25)
 
 
 
-cosmo = np.loadtxt("./cosmology.txt")
+cosmo = np.loadtxt("..output/background/cosmology.txt")
 print(f"Shape of cosmo = {np.shape(cosmo)}")
 
 """ All the parameters i will be using, grabbed from the txt file """
@@ -30,7 +30,7 @@ cosmo_OmegaK = cosmo[:,9]
 
 cosmo_dL = cosmo[:, 12]
 
-data_rec = np.loadtxt("./recombination.txt")
+data_rec = np.loadtxt("..output/recombination/recombination.txt")
 
 x = data_rec[:, 0]
 Xe = data_rec[:, 1]
@@ -124,9 +124,9 @@ print(f'time rm at x {cosmo_x[rm_time]} for idx 1 = {idx1} \n time md at x = {co
 
 """
 # Load the data from files
-pert_k_S = np.loadtxt('./perturbations_k0.001.txt')
-pert_k_M = np.loadtxt('./perturbations_k0.01.txt')
-pert_k_L = np.loadtxt('./perturbations_k0.1.txt')
+pert_k_S = np.loadtxt('..output/perturbations/perturbations_k0.001.txt')
+pert_k_M = np.loadtxt('..output/perturbations/perturbations_k0.01.txt')
+pert_k_L = np.loadtxt('..output/perturbations/perturbations_k0.1.txt')
 
 N = len(pert_k_L)
 
@@ -221,7 +221,7 @@ plt.yscale('log')
 
 plt.legend()
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig('./Figs/M3/densities_pert.pdf')
+plt.savefig('../figs/m3/densities_pert.pdf')
 plt.title('$\delta_{cdm}$, $\delta_b$, and $\delta_{\gamma}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 
 ###############################################################################################################################
@@ -254,7 +254,7 @@ plt.yscale('log')
 plt.legend()
 
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig('./Figs/M3/velocities_pert.pdf')
+plt.savefig('../figs/m3/velocities_pert.pdf')
 plt.title('$v_{cdm}$, $v_{b}$ and $v_{\gamma}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 
 
@@ -287,7 +287,7 @@ for k in range(len(k_list)):
 # plt.yscale('log')
 plt.legend()
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig('./Figs/M3/velocity_gamma.pdf')
+plt.savefig('../figs/m3/velocity_gamma.pdf')
 plt.title('$v_{\gamma} = -3\Theta_1$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 
 
@@ -319,7 +319,7 @@ for k in range(len(k_list)):
 # plt.yscale('log')
 plt.legend()
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig('./Figs/M3/delta_gamma.pdf')
+plt.savefig('../figs/m3/delta_gamma.pdf')
 plt.title('$\delta_{\gamma} = 4\Theta_0$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 
 
@@ -347,7 +347,7 @@ for k in range(len(k_list)):
     plt.plot(x[k], Theta_0[k], label=f"k = {k_values[k]}")
 plt.legend()
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig('./Figs/M3/Theta_0.pdf')
+plt.savefig('../figs/m3/Theta_0.pdf')
 plt.title('$\Theta_0$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 
 ###############################################################################################################################
@@ -375,7 +375,7 @@ for k in range(len(k_list)):
     plt.plot(x[k], Theta_1[k], label=f"k = {k_values[k]}")
 plt.legend()
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig('./Figs/M3/Theta_1.pdf')
+plt.savefig('../figs/m3/Theta_1.pdf')
 plt.title('$\Theta_1$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 
 
@@ -407,7 +407,7 @@ for k in range(len(k_list)):
     plt.plot(x[k], Theta_2[k], label=f"k = {k_values[k]}")
 plt.legend()
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig('./Figs/M3/Theta_2.pdf')
+plt.savefig('../figs/m3/Theta_2.pdf')
 plt.title('$\Theta_2$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 
 ###############################################################################################################################
@@ -438,7 +438,7 @@ for k in range(len(k_list)):
 plt.legend()
 
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig('./Figs/M3/psi_phi_sum.pdf')
+plt.savefig('../figs/m3/psi_phi_sum.pdf')
 plt.title('$\Psi + \Phi$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 
 ###############################################################################################################################
@@ -469,7 +469,7 @@ for k in range(len(k_list)):
 plt.legend()
 
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig('./Figs/M3/Phi.pdf')
+plt.savefig('../figs/m3/Phi.pdf')
 plt.title('$\Phi$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 
 plt.show()
@@ -479,7 +479,7 @@ plt.show()
 # plt.legend()
 # plt.title('$\Psi$')
 # plt.xlabel('x')
-# plt.savefig('./Figs/M3/Phi')
+# plt.savefig('../figs/m3/Phi')
 
 
 
@@ -528,7 +528,7 @@ for k in range(len(k_list)):
 plt.legend()
 plt.title('$\Theta_0$')
 plt.xlabel('x')
-plt.savefig('./Figs/M3/toy_cosmology/Theta_0')
+plt.savefig('../figs/m3/toy_cosmology/Theta_0')
 
 
 plt.figure()
@@ -537,7 +537,7 @@ for k in range(len(k_list)):
 plt.legend()
 plt.title('$\Theta_1$')
 plt.xlabel('x')
-plt.savefig('./Figs/M3/toy_cosmology/Theta_1')
+plt.savefig('../figs/m3/toy_cosmology/Theta_1')
 
 
 plt.figure()
@@ -546,7 +546,7 @@ for k in range(len(k_list)):
 plt.legend()
 plt.title('$\delta_{\gamma} = 4\Theta_0$')
 plt.xlabel('x')
-plt.savefig('./Figs/M3/toy_cosmology/4Theta_0')
+plt.savefig('../figs/m3/toy_cosmology/4Theta_0')
 
 
 plt.figure()
@@ -555,7 +555,7 @@ for k in range(len(k_list)):
 plt.legend()
 plt.title('$\Psi + \Phi$')
 plt.xlabel('x')
-plt.savefig('./Figs/M3/toy_cosmology/psi_phi_sum')
+plt.savefig('../figs/m3/toy_cosmology/psi_phi_sum')
 
 
 plt.figure()
@@ -564,7 +564,7 @@ for k in range(len(k_list)):
 plt.legend()
 plt.title('$\Phi$')
 plt.xlabel('x')
-plt.savefig('./Figs/M3/toy_cosmology/Phi')
+plt.savefig('../figs/m3/toy_cosmology/Phi')
 
 
 plt.figure()
@@ -573,7 +573,7 @@ for k in range(len(k_list)):
 plt.legend()
 plt.title('$\Psi$')
 plt.xlabel('x')
-plt.savefig('./Figs/M3/Phi')
+plt.savefig('../figs/m3/Phi')
 
 
 plt.figure()
@@ -588,7 +588,7 @@ plt.yscale('log')
 plt.legend()
 plt.title('$\delta_{cdm}$ and $\delta_b$')
 plt.xlabel('x')
-plt.savefig('./Figs/M3/toy_cosmology/delta_cdm_and_delta_b')
+plt.savefig('../figs/m3/toy_cosmology/delta_cdm_and_delta_b')
 
 
 plt.figure()
@@ -601,7 +601,7 @@ plt.yscale('log')
 plt.legend()
 plt.title('$v_{cdm} and v_{b}$')
 plt.xlabel('x')
-plt.savefig('./Figs/M3/toy_cosmology/v_cdm_and_v_b')
+plt.savefig('../figs/m3/toy_cosmology/v_cdm_and_v_b')
 
 
 

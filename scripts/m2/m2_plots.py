@@ -35,7 +35,7 @@ Gyr = 1/(60*60*24*365*1e9) # from s to Gyr
 Mpc = 3.24*10**(-23) # from m to Mpc
 Gpc = 3.24*10**(-25)
 
-data = np.loadtxt("./recombination.txt")
+data = np.loadtxt("../output/recombination/recombination.txt")
 
 x = data[:, 0]
 Xe = data[:, 1]
@@ -62,7 +62,7 @@ print(f'Freeze out: Xe = {Xe[-1]}')
 """ Finding the x time of last scattering """
 # print(np.max(gtilde))
 
-cosmo = np.loadtxt("cosmology.txt")
+cosmo = np.loadtxt("../output/background/cosmology.txt")
 t_of_x = cosmo[ : , 11]
 
 idx = np.where(gtilde==np.max(gtilde))
@@ -141,7 +141,7 @@ plt.axhline(y=1, color='grey', linestyle='solid', alpha=0.3)  # Adding vertical 
 plt.legend()
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 # plt.grid('True')
-plt.savefig("./Figs/M2/Taus_vs_x.pdf")
+plt.savefig("../figs/m2/Taus_vs_x.pdf")
 
 
 """ PLOT OF G_TILDE AND DERIVATIVES """
@@ -155,7 +155,7 @@ plt.axvline(x=x_re, color='black', linestyle='dashdot', label="Recombination", a
 # plt.axvline(x=x_Saha, color='purple', linestyle='dashdot', label="Saha recombination", alpha=0.3)  # Adding vertical line at x_Saha
 plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.legend()
-plt.savefig("./Figs/M2/Gtilde_all.pdf")
+plt.savefig("../figs/m2/Gtilde_all.pdf")
 
 
 """ PLOT OF X_e """
@@ -172,7 +172,7 @@ plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.ylabel("$X_e$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.grid('True')
 plt.legend()
-plt.savefig("./Figs/M2/Xe_vs_x.pdf")
+plt.savefig("../figs/m2/Xe_vs_x.pdf")
 plt.show()
 
 
@@ -184,7 +184,7 @@ plt.xlabel('x')
 plt.ylabel(r'$\tilde{g}(x)$')
 plt.legend()
 # plt.title(r'Plot of $\tilde{g}$ vs. x')
-plt.savefig("./Figs/M2/Gtilde_vs_x.pdf")
+plt.savefig("../figs/m2/Gtilde_vs_x.pdf")
 # plt.show()  # Show the first plot
 
 # Plot dg_tilde/dx vs x
@@ -195,7 +195,7 @@ plt.xlabel('x')
 plt.ylabel(r'$\frac{d\tilde{g}}{dx}(x)$')
 # plt.title(r'Plot of $\frac{d\tilde{g}}{dx}$ vs. x')
 plt.legend()
-plt.savefig("./Figs/M2/Dgtilde_vs_x.pdf")
+plt.savefig("../figs/m2/Dgtilde_vs_x.pdf")
 # plt.show()  # Show the second plot
 
 # Plot d^2g_tilde/dx^2 vs x
@@ -206,5 +206,5 @@ plt.xlabel('x')
 plt.ylabel(r'$\frac{d^2\tilde{g}}{dx^2}(x)$')
 # plt.title(r'Plot of $\frac{d^2\tilde{g}}{dx^2}$ vs. x')
 plt.legend()
-plt.savefig("./Figs/M2/DdGtilde_vs_x.pdf")
+plt.savefig("../figs/m2/DdGtilde_vs_x.pdf")
 """

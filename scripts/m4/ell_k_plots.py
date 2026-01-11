@@ -9,7 +9,7 @@ Mpc = 3.24*10**(-23) # 1 m in Mpc
 Gpc = 3.24*10**(-25) 
 c = const.c
 
-cosmo = np.loadtxt("cosmology.txt")
+cosmo = np.loadtxt("..output/background/cosmology.txt")
 cosmo_x = cosmo[:,0]
 cosmo_eta_of_x = cosmo[:,1]
 cosmo_Hp_of_x = cosmo[:,2]
@@ -20,11 +20,11 @@ TempCMB0 = 2.7255#TempCMB[np.argmin(abs(cosmo_x))]
 eta_0 = cosmo_eta_of_x[np.argmin(abs(cosmo_x))]
 print(f'Eta_0 = {eta_0}, x = {cosmo_x[np.argmin(abs(cosmo_x))]}')
 
-data_cell = np.loadtxt("./cells.txt")
-data_SW = np.loadtxt("./cells_SW.txt")
-data_ISW = np.loadtxt("./cells_ISW.txt")
-data_Doppler = np.loadtxt("./cells_Doppler.txt")
-data_Polarization = np.loadtxt("./cells_Polarization.txt")
+data_cell = np.loadtxt("..output/power_spectrum/cells.txt")
+data_SW = np.loadtxt("..output/power_spectrum/cells_SW.txt")
+data_ISW = np.loadtxt("..output/power_spectrum/cells_ISW.txt")
+data_Doppler = np.loadtxt("..output/power_spectrum/cells_Doppler.txt")
+data_Polarization = np.loadtxt("..output/power_spectrum/cells_Polarization.txt")
 
 l = data_cell[:, 0]
 Cell = data_cell[:, 1] # Cell is normalized in text
@@ -33,7 +33,7 @@ Cell_ISW = data_ISW[:, 1]
 Cell_Doppler = data_Doppler[:, 1]
 Cell_Polarization = data_Polarization[:, 1]
 
-planck_data = np.loadtxt('./M4_plots/planck_cell_low.txt')
+planck_data = np.loadtxt('../data/planck/planck_cell_low.txt')
 
 ell_planck = planck_data[:,0]
 C_ell_planck = planck_data[:,1]
@@ -57,7 +57,7 @@ plt.xscale("log")
 plt.ylabel(r"$C_{\ell}\cdot\frac{\ell\cdot(\ell + 1)}{2\pi} 10^6 T_{CMB}^2$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.xlabel("$\ell$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.legend()
-plt.savefig('./Figs/M4/C_ell.pdf')
+plt.savefig('../figs/m4/C_ell.pdf')
 
 
 
@@ -93,7 +93,7 @@ plt.savefig('./Figs/M4/C_ell.pdf')
 
 # Matter-power spectrum
 
-data_2 = np.loadtxt("./matter_transfer.txt")
+data_2 = np.loadtxt("..output/power_spectrum/matter_transfer.txt")
  
 k = data_2[:, 0]
 pofk = data_2[:, 1]
@@ -122,7 +122,7 @@ plt.ylabel(r'$P(k)(Mpc/h)^3$', fontdict={'fontsize': 14, 'fontname': 'Times New 
 plt.xscale('log')
 plt.yscale('log')
 plt.legend()
-plt.savefig('./Figs/M4/Pk.pdf')
+plt.savefig('../figs/m4/Pk.pdf')
 
 
 # # Theta_l
@@ -146,7 +146,7 @@ plt.ylim(-0.005, 0.02)
 plt.ylabel(r'$\Theta_{\ell}(k)$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.xlabel("$k\eta_0$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.legend()
-plt.savefig('./Figs/M4/Theta_ell_k.pdf')
+plt.savefig('../figs/m4/Theta_ell_k.pdf')
 
 
 
@@ -197,7 +197,7 @@ plt.xlim(-0.01,1500)
 plt.ylabel(r'$\ell(\ell + 1)|\Theta_{\ell}(k)|^2$/k', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.xlabel("$k\eta_0$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.legend()
-plt.savefig('./Figs/M4/Integrand.pdf')
+plt.savefig('../figs/m4/Integrand.pdf')
 
 plt.show()
 

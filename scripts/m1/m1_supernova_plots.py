@@ -8,8 +8,8 @@ Gyr = 1/(60*60*24*365*1e9) # from s to Gyr
 Mpc = 3.24*10**(-23) # from m to Mpc
 Gpc = 3.24*10**(-26) # from m to Gpc
 
-cosmo = np.loadtxt("cosmology.txt")
-cosmo_best = np.loadtxt("best_params_cosmology.txt")
+cosmo = np.loadtxt("../output/background/cosmology.txt")
+cosmo_best = np.loadtxt("../output/background/best_params_cosmology.txt")
 print(f"Shape of cosmo = {np.shape(cosmo)}")
 
 """
@@ -44,7 +44,7 @@ cosmo_x_best = cosmo_best[:,0]
 
 
 """ SUPERNOVA FITTING"""
-data = np.loadtxt("results_supernovafitting.txt")
+data = np.loadtxt("..output/supernova/results_supernovafitting.txt")
 
 converged_data = data[200:]
 print(f"The shape of the converged data is {np.shape(converged_data)}\n")
@@ -76,7 +76,7 @@ OmegaLambda_s3 = 1 - (OmegaK_s3 + OmegaM_s3)
 
 """ dL plot with supernova best fit, fiducial cosmology and betouli observations """
 
-betoule = np.loadtxt("Betoule_supernova.txt")
+betoule = np.loadtxt("..data/supernova/Betoule_supernova.txt")
 
 
 z_cosmo = np.exp(-cosmo_x)-1
@@ -115,7 +115,7 @@ plt.xscale('log')
 plt.xlim(0.005, 1.45)
 plt.ylim(3.5, 8)
 plt.legend()
-plt.savefig("Figs/sn_dL_plots.pdf")
+plt.savefig("..figs/m1/sn_dL_plots.pdf")
 
 
 
@@ -133,7 +133,7 @@ plt.legend()
 plt.xlabel('$\Omega_{M0}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.ylabel('$\Omega_{\Lambda0}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 # plt.title('Confidence Region of $\Omega_{M0}$ and $\Omega_{\Lambda0}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig("Figs/sn_Confidence_region.pdf")
+plt.savefig("..figs/m1/sn_Confidence_region.pdf")
 
 std_OmegaM = np.std(OmegaM_selected)
 std_OmegaLambda = np.std(OmegaLambda_selected)
@@ -170,7 +170,7 @@ plt.xlabel('100 km/s/Mpc', fontdict={'fontsize': 14, 'fontname': 'Times New Roma
 # plt.ylabel('Frequency normalized')
 plt.legend()
 # plt.title('Posterior pdf of $H_0$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig("Figs/sn_Histogram_of_H_parameters.pdf")
+plt.savefig("..figs/m1/sn_Histogram_of_H_parameters.pdf")
 
 
 """ Plot the histogram and omegas distribution """
@@ -194,7 +194,7 @@ plt.text(0.05, 0.95, f'$\mu$={OmegaM_mean:.3f} \n $\sigma={OmegaM_std:.3f}$', tr
 # plt.title('Posterior pdf of $\Omega_{M0}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.xlabel('$\Omega_{M0}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 plt.legend()
-plt.savefig("Figs/sn_Histogram_of_omegaM_Gaussian.pdf")
+plt.savefig("..figs/m1//sn_Histogram_of_omegaM_Gaussian.pdf")
 
 
 plt.figure()
@@ -214,7 +214,7 @@ plt.text(0.05, 0.95, f'$\mu$={OmegaK_mean:.3f}\n$\sigma$={OmegaK_std:.3f}', tran
 
 plt.legend()
 # plt.title('Posterior pdf of $\Omega_{K0}$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-plt.savefig("Figs/sn_Histogram_of_omegaK_Gaussian.pdf")
+plt.savefig("..figs/m1/sn_Histogram_of_omegaK_Gaussian.pdf")
 
 
 
@@ -235,7 +235,7 @@ plt.savefig("Figs/sn_Histogram_of_omegaK_Gaussian.pdf")
 # plt.xlabel(r'$\chi ^2/N$', fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 # plt.text(0.05, 0.95, f'$\mu$={chi_mean:.3f} \n $\sigma={chi_std:.3f}$', transform=plt.gca().transAxes, 
 #          verticalalignment='top', bbox=dict(boxstyle="square,pad=0.3", facecolor='white', alpha=0.5, edgecolor='none'))
-# plt.savefig('Figs/Goodness_of_fit.pdf')
+# plt.savefig('..figs/m1/Goodness_of_fit.pdf')
 # plt.show()
 
 
