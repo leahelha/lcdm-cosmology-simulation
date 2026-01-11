@@ -1,6 +1,3 @@
-# Ignore files and folders:
-baumann.pdf
-
 
 # Python bytecode
 __pycache__/
@@ -29,3 +26,17 @@ build/
 dist/
 *.egg-info/
 *.o
+*.a
+*.so
+*.dylib
+*.exe
+a.out
+*.d
+
+# Generated outputs
+output/
+
+
+# Ignore other files and folders:
+baumann.pdf
+
