@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from astropy import constants as const
 
+"""
+Testing if electron fraction Xe behaves as expected
+"""
 
 file = np.loadtxt("../output/recombination/Xe_test.txt")
 
@@ -20,4 +23,4 @@ x = file[:, 2]
 # # plt.axhline(y=, color='blue', linestyle='dashdot', label="Freeze out")  
 # plt.xlabel("$x$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
 # plt.ylabel("$X_e$", fontdict={'fontsize': 14, 'fontname': 'Times New Roman'})
-# plt.savefig("./Figs/M2/Xe_vs_x.pdf")
+# plt.savefig("../figs/m2/Xe_vs_x.pdf")
