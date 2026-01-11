@@ -30,7 +30,7 @@ One **result** from this milestone is the above plot of the optical depth, $\tau
 ### Milestone 3 (m3): Perturbations
 **The goal of m3 is to simulate the evolution of structure in the Universe. Specifically, how perturbations in a medium of baryons, photons, and dark matter predict large scale structure formation we see to day.**
 
-This milestone explores the relationship with perturbations in cosmic fluid and structure formation by modellng for different 
+
 ![Theta_0](./figs/m3/Theta_0.png)
 
 One **result** from this milestone is the above plot of the Monopole, $\Theta_0$, of the CMB, which represents the average temperature of the CMB. The average temperature of the CMB is directly tied to the density perturbation of radiation (photons), and the result shows how the battle for gravity domination between photons, baryons, and dark matter affects the CMB temperature for different size scales (k modes).
